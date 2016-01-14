@@ -1,10 +1,46 @@
 <!-- Default panel contents -->
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <title>menu</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css"> -->
+  <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css" />
+  <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="bower_components/materialize/bin/materialize.css" />
+
+
+  <!-- // <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script> -->
+  <script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
+  <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+  <script src="bower_components/bootstrap/js/dist/alert.js"></script>
+  <script src="bower_components/bootstrap/js/dist/button.js"></script>
+  <script src="bower_components/bootstrap/js/dist/carousel.js"></script>
+  <script src="bower_components/bootstrap/js/dist/collapse.js"></script>
+  <script src="bower_components/bootstrap/js/dist/dropdown.js"></script>
+  <script src="bower_components/bootstrap/js/dist/modal.js"></script>
+  <script src="bower_components/bootstrap/js/dist/popover.js"></script>
+  <script src="bower_components/bootstrap/js/dist/scrollspy.js"></script>
+  <script src="bower_components/bootstrap/js/dist/tab.js"></script>
+  <script src="bower_components/bootstrap/js/dist/tooltip.js"></script>
+  <script src="bower_components/bootstrap/js/dist/util.js"></script>
+  <script src="camera.js"></script>
+  <!-- endbuild -->
+</head>
+
+<body>
 <div class="menu">
   <h1 class="display-3"></h1>
   <p class="lead">メニューを選択して下さい。</p>
   <ul>
-    <li><a class="btn btn-primary btn-lg" href="camera/camera.html" role="button">撮る</a></li>
+    <li><a class="btn btn-primary btn-lg" role="button" ng-link="camera" >撮る</a></li>
     <li><a class="btn btn-primary btn-lg" href="#" role="button">見る</a></li>
-    <li><a class="btn btn-primary btn-lg" href="#" role="button">設定</a></li>
-    </ul>
+    <li><a class="btn btn-primary btn-lg" href="#" role="button" ng-link="initialsetting">設定</a></li>
+    <li><input class="btn btn-primary btn-lg" type="file" accept="image/*" capture="camera" value="撮る"></li>
+  </ul>
+
+
+
 </div>
+</body>

@@ -15,18 +15,20 @@
       'proto.components.contact',
       'proto.components.login',
       'proto.components.menu',
+      'proto.components.camera',
       'proto.components.initialsetting'
     ])
     .controller('AppController', AppController);
 
   AppController.$routeConfig = [
-    {path: '/',       redirectTo: '/home'},
+    {path: '/',       redirectTo: '/login'},
     {path: '/home',    component: 'home'},
     {path: '/about',   component: 'about'},
     {path: '/contact', component: 'contact'},
     {path: '/login',   component: 'login'},
     {path: '/menu',   component: 'menu'},
-    {path: '/initialsetting',   component: 'initialsetting'},
+    {path: '/camera',   component: 'camera'},
+    {path: '/initialsetting',   component: 'initialsetting'}
   ];
 
   AppController.$inject = [];
