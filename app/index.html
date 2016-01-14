@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <base href="/">
-    <title>proto</title>
+    <title>Lifebook</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width">
     <link rel="shortcut icon" href="/favicon.ico">
@@ -24,7 +24,6 @@
     <![endif]-->
 
     <div ng-include="'components/header/header.html'"></div>
-
     <div class="container">
 
       <div ng-viewport></div>
@@ -32,7 +31,6 @@
       <div ng-include="'components/footer/footer.html'"></div>
 
     </div>
-
     <!-- build:js(.) scripts/vendor.js -->
     <!-- bower:js -->
     <script src="bower_components/jquery/dist/jquery.js"></script>
@@ -43,7 +41,7 @@
     <!-- endbower -->
     <!-- endbuild -->
 
-    
+
         <!-- build:js(.) scripts/plugins.js -->
         <script src="bower_components/bootstrap/js/dist/alert.js"></script>
         <script src="bower_components/bootstrap/js/dist/button.js"></script>
@@ -52,12 +50,13 @@
         <script src="bower_components/bootstrap/js/dist/dropdown.js"></script>
         <script src="bower_components/bootstrap/js/dist/modal.js"></script>
         <script src="bower_components/bootstrap/js/dist/popover.js"></script>
+
         <script src="bower_components/bootstrap/js/dist/scrollspy.js"></script>
         <script src="bower_components/bootstrap/js/dist/tab.js"></script>
         <script src="bower_components/bootstrap/js/dist/tooltip.js"></script>
         <script src="bower_components/bootstrap/js/dist/util.js"></script>
         <!-- endbuild -->
-    
+
 
     <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
     <script>
@@ -72,13 +71,17 @@
         <!-- build:js({app,.tmp}) scripts/main.js -->
         <!-- injector:js -->
         <script src="components/about/about.js"></script>
+        <script src="components/camera/camera.js"></script>
         <script src="components/contact/contact.js"></script>
         <script src="components/home/home.js"></script>
+        <script src="components/initialsetting/initialsetting.js"></script>
+        <script src="components/login/login.js"></script>
+        <script src="components/menu/menu.js"></script>
         <script src="scripts/config.js"></script>
         <script src="service/gruntfiles/gruntfiles.js"></script>
         <!-- endinjector -->
         <script src="scripts/main.js"></script>
         <!-- endbuild -->
-
+        <script src="components/initialsetting/initialsetting.js"></script>
   </body>
 </html>
