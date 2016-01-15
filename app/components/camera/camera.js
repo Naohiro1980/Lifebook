@@ -32,8 +32,6 @@
     console.log('CameraController activate Method');
     vm = this;
   };
-
-
   /**
    * Angular ViewModel
    *
