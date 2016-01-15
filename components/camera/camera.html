@@ -4,14 +4,26 @@
     <meta charset="utf-8">
     <script src="bower_components/materialize/bin/materialize.js"></script>
     <script src="camera.js"></script>
-    <script src="canvas.js"></script>
     <title>キャプチャー</title>
   </head>
   <body>
-    <div class="camera">
+    <main>
+      <p>元画像 <span id="src-width-height">width: height: </span></p>
+      <p>リサイズ <span id="dst-width-height">width: height: </span></p>
+      <p><input type="file" accept="image/*" capture="camera" id="file-image"></p>
+      <canvas id="mycanvas">Canvasに対応しているブラウザを使用して下さい。</canvas
+    </main>
+<!--
       <p>カメラを起動します。</p>
-      <p><input type="file" accept="image/*" capture="camera"></p>
+      <p>元画像 <span id="src-width-height">width: height: </span></p>
+      <p>リサイズ <span id="dst-width-height">width: height: </span></p>
+      <p><input type="file" accept="image/*" capture="camera" id="file-image"></p>
       <canvas id="mycanvas">Canvasに対応しているブラウザを使用して下さい。</canvas>
+      <script src="components/camera/canvas.js"></script>
     </div>
+-->
+  <script src="canvas.js"></script>
+
+
   </body>
 </html>
