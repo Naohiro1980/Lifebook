@@ -33,6 +33,7 @@
     vm = this;
   };
 
+
   /**
    * Angular ViewModel
    *
