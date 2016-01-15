@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <script src="bower_components/materialize/bin/materialize.js"></script>
+    <title>キャプチャー</title>
+  </head>
+  <body>
+    <div class="camera">
+      <p>カメラを起動します。</p>
+      <p><input type="file" accept="image/*" capture="camera"></p>
+      <canvas id="myCanvas" width="240" height="320" style="border:1px solid black"></canvas>
+      <script>
+        // 撮影後に処理を開始
+        document.getElementById("cameraImage").addEventListener("change", function(){
+        // Canvasにカメラで撮影した画像を描画
+        var canvasObj = document.getElementById("myCanvas");
+        var context = canvasObj.getContext("2d");
+        var canvasW = canvasObj.width;
+        var canvasH = canvasObj.height;
+        var reader = new FileReader();
+        reader.onload = function(evt){
+        var imgObj = new Image();
+        imgObj.src = reader.result;
+        imgObj.onload = function(){
+        context.drawImage(imgObj,0,0, canvasObj.width, canvasObj.height);
+        }
+      }
+      var imageFile = document.getElementById("cameraImage").files[0];
+      reader.readAsDataURL(imageFile);
+      }, false);
+</script>
+    </div>
+  </body>
+</html>
