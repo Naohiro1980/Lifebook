@@ -11,7 +11,6 @@
     .controller('CameraController', CameraController);
 
   CameraController.$inject = [];
-
   /**
    * CameraController
    *
@@ -39,4 +38,5 @@
    * @type {Object}
    */
   var vm;
+
 })();
