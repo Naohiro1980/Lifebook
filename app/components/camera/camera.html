@@ -11,27 +11,25 @@
     <div id="printimg">
       <canvas id="mycanvas">Canvas対応のブラウザで開いて下さい。</canvas>
     </div>
+    <a class="waves-effect waves-light btn" id = "registimg">登録</a>
+    <canvas id="mycanvasout">Canvas対応のブラウザで開いて下さい。</canvas>
   <script>
-  //カメラ起動時
+  //キャプチャー後のアクション
   (function() {
     var canvas = document.getElementById('mycanvas');
     if (checkFileApi() && checkCanvas(canvas)) {
-      console.log('成功');
       /*ファイル選択*/
       var fileimage = document.getElementById('fileimage');
       fileimage.addEventListener('change', selectReadfile, false);
-    }else {
-      console.log('checkエラー');
     }
 
-    //canvasに対応しているか
     function checkCanvas(canvas) {
       if (!canvas || !canvas.getContext) {
         return false;
+      }else {
+        return true;
       }
-      return true;
     }
-
     //FileAPIに対応しているか
     function checkFileApi() {
       // Check for the various File API support.
@@ -51,28 +49,6 @@
       //dataURL形式でファイルを読み込む
       reader.readAsDataURL(file[0]);
       //ファイルの読込が終了した時の処理
-      reader.onload = function() {
-        readDrawImg(reader, canvas, 0, 0);
-      };
-    }
-
-    //ドラッグオンドロップ
-    function handleDragOver(e) {
-      e.stopPropagation();
-      e.preventDefault();
-      e.dataTransfer.dropEffect = 'copy'; // Explicitly show this is a copy.
-    }
-
-    function handleDragDropFile(e) {
-      e.stopPropagation();
-      e.preventDefault();
-      var files = e.dataTransfer.files; // FileList object.
-      var file = files[0];
-      var reader = new FileReader();
-      //dataURL形式でファイルを読み込む
-      reader.readAsDataURL(file[0]);
-      //ファイルの読込が終了した時の処理
-      var canvas = document.getElementById('mycanvas');
       reader.onload = function() {
         readDrawImg(reader, canvas, 0, 0);
       };
@@ -103,6 +79,7 @@
         ctx.drawImage(img, x, y, canvas.width, canvas.height);
       };
     }
+
   })();
 
   </script>
