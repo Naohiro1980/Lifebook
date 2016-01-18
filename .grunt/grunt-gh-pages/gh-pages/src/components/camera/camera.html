@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html id = 'camerahtml'>
+  <head>
+    <meta charset="utf-8">
+    <title>キャプチャー</title>
+    <script src=""></script>
+  </head>
+  <body>
+    <p class = "camera">画像を選択を選択してください。</p>
+    <input type="file" id="fileimage" accept="image/*">
+    <div id="printimg">
+      <canvas id="mycanvas">Canvas対応のブラウザで開いて下さい。</canvas>
+    </div>
+    <a class="waves-effect waves-light btn" id = "registimg">登録</a>
+    <canvas id="mycanvasout">Canvas対応のブラウザで開いて下さい。</canvas>
+  <script>
+  //キャプチャー後のアクション
+  (function() {
+    var canvas = document.getElementById('mycanvas');
+    if (checkFileApi() && checkCanvas(canvas)) {
+      /*ファイル選択*/
+      var fileimage = document.getElementById('fileimage');
+      fileimage.addEventListener('change', selectReadfile, false);
+    }
+
+    function checkCanvas(canvas) {
+      if (!canvas || !canvas.getContext) {
+        return false;
+      }else {
+        return true;
+      }
+    }
+    //FileAPIに対応しているか
+    function checkFileApi() {
+      // Check for the various File API support.
+      if (window.File && window.FileReader && window.FileList && window.Blob) {
+        // Great success! All the File APIs are supported.
+        return true;
+      }
+      //alert('ブラウザが対応していません。');
+      return false;
+    }
+
+    //ファイルが選択されたら読み込む
+    function selectReadfile(e) {
+      var canvas = document.getElementById('mycanvas');
+      var file = e.target.files;
+      var reader = new FileReader();
+      //dataURL形式でファイルを読み込む
+      reader.readAsDataURL(file[0]);
+      //ファイルの読込が終了した時の処理
+      reader.onload = function() {
+        readDrawImg(reader, canvas, 0, 0);
+      };
+    }
+
+    function readDrawImg(reader, canvas, x, y) {
+      var img = readImg(reader);
+      drawImgOnCav(canvas, img, x, y);
+    }
+
+    //ファイルの読込が終了した時の処理
+    function readImg(reader) {
+      //ファイル読み取り後の処理
+      var dataurl = reader.result;
+      var img = new Image();
+      img.src = dataurl;
+      return img;
+    }
+
+    //キャンバスにImageを表示
+    function drawImgOnCav(canvas, img, x, y) {
+      img.onload = function() {
+        var ctx = canvas.getContext('2d');
+        var wrapper = document.getElementById('printimg');
+        /*カメラサイズ*/
+        canvas.width = 200;
+        canvas.height = 200;
+        ctx.drawImage(img, x, y, canvas.width, canvas.height);
+      };
+    }
+
+  })();
+
+  </script>
+  </body>
+</html>
