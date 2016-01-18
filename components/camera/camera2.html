@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8">
+    <meta name="description" content="FileAPI で画像を選択またモバイルではカメラを起動し、画像をCanvasに表示する。なお、iPhone Safari では、2MBの画像は Canvas 上に表示されないので、リサイズして表示する。">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>ファイル選択（カメラ起動）テスト</title>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <header>
+      <h1>ファイル選択（カメラ起動）テスト</h1>
+    </header>
+    <main>
+      <p>元画像 <span id="src-width-height">width: height: </span></p>
+      <p>リサイズ <span id="dst-width-height">width: height: </span></p>
+      <p><input type="file" accept="image/*" capture="camera" id="file-image"></p>
+      <canvas id="mycanvas">Canvasに対応しているブラウザを使用して下さい。</canvas>
+    </main>
+    <script src="components/camera/canvas.js"></script>
+  </body>
+</html>
